@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PerfectLearn Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+ <style>
+
+/* Desktop */
+
+@media only screen and (max-width: 1440px){
+  .carousel-item img{
+    height: 100vh;
+  }
+}
+
+/* Laptop */
+
+@media only screen and (max-width: 1024px){
+  #welcome-p{
+    padding: 0px !important;
+  }
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 425px){
+    #course-subtext{
+      padding-bottom: 25px;
+    }
+    .footer-space{
+      margin-bottom: 50px;
+    }
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light a.navbar-brand img{
+      height: 35px;
+    }
+    .carousel-item.active .carousel-caption{
+      display: none;
+    }
+    .carousel-item .carousel-caption{
+      display: none;
+    }
+    #research-box #research p {
+      padding-top: 0px;
+    }
+    .university-mobile{
+      display: none;
+    }
+    section#welcome-top{
+      margin-top: 30px;
+    }
+}
+
+/* Tablet */
+
+@media only screen and (max-width: 768px){
+  #welcome-top h1{
+    font-size: 30px;
+  }
+  #welcome-p{
+    padding: 0px !important;
+    font-size: 12px;
+  }
+  button#button-about{
+    margin: 0px;
+  }
+  div#admission-text h1{
+    font-size: 30px;
+  }
+  #admission-text{
+    font-size: 12px;
+  }
+  button#button-apply{
+    margin-top: 0px;
+  }
+  #research h1{
+    font-size: 30px;
+  }
+  #research p{
+    font-size: 12px;
+  }
+  button#button-seemore{
+    margin: 0px;
+  }
+  .contact-text input, .contact-text textarea {
+    width: 100%;
+    margin-bottom: 12px !important;
+    padding: 8px !important;
+  }
+  button#button-send{
+    padding: 12px 40px;
+  }
+  #course-subtext h4{
+    font-size: 20px;
+  }
+  .carousel-item.active .carousel-caption {
+    bottom: 0px;
+  }
+  .carousel-item.active .carousel-caption h3{
+    font-size: 25px;
+  }
+  .carousel-item.active .carousel-caption h2{
+    font-size: 35px;
+  }
+  .carousel-item.active .carousel-caption p{
+    font-size: 20px;
+  }
+  .carousel-item.active .carousel-caption button#button-start{
+    margin-bottom: 55px;
+    margin-top: 20px;
+  }
+  .carousel-item .carousel-caption {
+    bottom: 0px;
+  }
+  .carousel-item .carousel-caption h3{
+    font-size: 25px;
+  }
+  .carousel-item .carousel-caption h2{
+    font-size: 35px;
+  }
+  .carousel-item .carousel-caption p{
+    font-size: 20px;
+  }
+  .carousel-item .carousel-caption button#button-start{
+    margin-bottom: 55px;
+    margin-top: 20px;
+  }
+    .footer-space{
+      margin-bottom: 50px;
+    }
+    .row .university img {
+    height: 35px;
+    width: 40px;
+  }
+  .row .university p{
+    font-size: 12px;
+  }
+
+}
+
+
+/* CSS */
+
+  *{
+      padding: 0px;
+      margin: 0px;
+    }
+
+    a.navbar-brand img{
+      height: 50px;
+    }
+    li.nav-item{
+      color: #000;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+    .navbar-light .navbar-nav .nav-link{
+      color: #000;
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
+      color: blue;
+    }
+    #search-img{
+      background-color: black;
+      padding: 7px;
+      margin-left: 15px;
+    }
+    .carousel-caption{
+      bottom: 150px;
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: auto;
+    }
+    .carousel-caption h3{
+      font-size: 40px;
+      color: #d4a81e;
+      line-height: 0.5;
+      font-weight: 700;
+    }
+    .carousel-caption h2{
+      font-size: 55px;
+      font-weight: 700;
+    }
+    .carousel-caption p{
+      font-size: 30px;
+    }
+    #button-start{
+      margin-top: 50px;
+      background-color: #d4a81e;
+      border: #d4a81e;
+      padding: 10px 25px;
+    }
+
+    /* University */
+
+    .university{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .university img{
+      height: 45px;
+      width: 50px;
+    }
+
+    /* Welcome to Education */
+
+    #education-image{
+      width: 100%;
+    }
+    #welcome-top{
+      margin-top: 70px;
+      margin-bottom: 50px;
+    }
+    #welcome-p{
+      padding-top: 50px;
+    }
+    #button-about{
+      background-color: #095a83;
+      border: #095a83;
+      border-radius: 0px;
+      margin-top: 20px;
+    }
+    #button-about:hover{
+      background-color: #000;
+      border: #095a83;
+      border-radius: 0px;
+      margin-top: 20px;
+    }
+
+
+    /* Popular Course */
+
+    .box-space{
+      padding-top: 30px;
+      padding-bottom: 100px;
+    }
+    .course-box{
+      width: 100%;
+    }
+    #image-course{
+      width: 100%;
+    }
+    #course-text img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #course-text h1 {
+        display: flex;
+        justify-content: center;
+    }
+    #course-text{
+      margin-bottom: 50px;
+    }
+    #course-subtext{
+      text-align: center;
+    }
+
+
+    /* Admission */
+
+    #image-admission{
+      width: 100%;
+    }
+    .background-grey{
+      background-color: #eee;
+      margin-bottom: 50px;
+    }
+    #admission-text{
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+    #button-apply{
+      background-color: #095a83;
+      border: #095a83;
+      border-radius: 0px;
+      margin-top: 20px;
+    }
+    #button-apply:hover{
+      background-color: #000;
+      border: #095a83;
+      border-radius: 0px;
+      margin-top: 20px;
+    }
+
+
+    /* Research */
+
+    #research-text{
+      padding-bottom: 50px;
+    }
+    #button-seemore{
+      background-color: #095a83;
+      border: #095a83;
+      border-radius: 0px;
+      margin-top: 20px;
+    }
+    #button-seemore:hover{
+      background-color: #000;
+      border: #095a83;
+      border-radius: 0px;
+      margin-top: 20px;
+    }
+    #research{
+      padding-bottom: 20px;
+    }
+    #research-box{
+      margin-bottom: 50px;
+    }
+    #research p {
+      padding-top: 50px;
+    }
+
+
+    /* News */
+
+    #news{
+      margin-bottom: 50px;
+    }
+    .carousel-text h4{
+      display: flex;
+      justify-content: center;
+    }
+
+
+    /* Contact */
+
+    .contact-bluebox{
+      background-color: #12385b;
+      padding-bottom: 50px;
+    }
+    .contact-form{
+      padding: 70px 0px;
+    }
+    .contact-text input, .contact-text textarea{
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 20px;
+    }
+    #button-send{
+      background-color: #d4a81e;
+      border: #d4a81e;
+      padding: 15px 70px;
+      border-radius: 0px;
+      text-transform: uppercase;
+    }
+    #button-send:hover{
+      background-color: #fff;
+      border: #fff;
+      color: #000;
+      padding: 15px 70px;
+      border-radius: 0px;
+      text-transform: uppercase;
+    }
+    #contactform-text img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #contactform-text h1{
+      display: flex;
+      justify-content: center;
+    }
+    #contactform-text{
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    /* Footer */
+
+    .footer-box{
+      background-color: #0b1c2c;
+      color: #fff;
+      padding: 50px 0px;
+    }
+    hr{
+      border: 1px solid #d4a81e;
+    }
+    .footer-image ul li{
+      padding-bottom: 10px;
+      list-style-type: none;
+    }
+    .para-1 input{
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .para-1 button{
+      background-color: #d4a81e;
+      border: #d4a81e;
+      padding: 5px 20px; 
+      font-size: 15px;
+    }
+    #footer-contact div{
+      margin-bottom: 20px;
+    }
+
+
+    .end-footer p{
+      display: flex;
+      justify-content: center;
+      margin: 20px 0px;
+      color: #fff;
+    }
+    .footer-last{
+      background-color: #095a83;
+      padding: 3px;
+    }
+
+
+
+ </style>
+
+</head>
+
+<body>
+  <div>
+
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Research</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+          <form>
+            <img src="images/search_icon.png" id="search-img">
+          </form>
+        </div>
+      </nav>
+    </div>
+
+
+<!-- Menu -->
+
+    <section>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/banner_img.png" alt="First slide" id="banner-image">
+            <div class="carousel-caption">
+              <h3>You only have know one thing</h3>
+              <h2>you can learn anything</h2>
+              <p>FREE EDUCATIONS</p>
+              <button class="btn btn-primary btn-lg" id="button-start">Start a Course</button>
+            </div>
+          </div>
+         <div class="carousel-item">
+            <img src="images/banner_img.png" alt="First slide" id="banner-image">
+            <div class="carousel-caption">
+              <h3>You only have know one thing</h3>
+              <h2>you can learn anything</h2>
+              <p>FREE EDUCATIONS</p>
+              <button class="btn btn-primary btn-lg" id="button-start">Start a Course</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+<!-- University -->
+
+    <div style="margin: 40px;" class="university-mobile">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 university">
+            
+            <div class="col-lg-6 col-md-6">
+              <div class="row">
+                  <div class="col-lg-3 col-md-3">
+                    <img src="images/i1.png" width="100%" height="100%">
+                    <p>University Life</p>
+                  </div>
+                  <div class="col-lg-3 col-md-3">
+                    <img src="images/i2.png" width="100%" height="100%">
+                    <p>Graduation</p>
+                  </div>
+                  <div class="col-lg-3 col-md-3">
+                    <img src="images/i3.png" width="100%" height="100%">
+                    <p>Athletics</p>
+                  </div>
+                  <div class="col-lg-3 col-md-3">
+                    <img src="images/i4.png" width="100%" height="100%">
+                    <p>Social</p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                      <img src="images/i5.png" width="100%" height="100%">
+                      <p>Location</p>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <img src="images/i6.png" width="100%" height="100%">
+                      <p>Call us</p>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <img src="images/i7.png" width="100%" height="100%">
+                      <p>Email</p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+   
+
+<!-- Welcome to Education -->
+
+
+  <section id="welcome-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6" style="padding-bottom: 20px;">
+          <h1>Welcome To Education</h1>
+          <img src="images/heading_main_border.png">
+          <p id="welcome-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <button class="btn btn-primary btn-lg" id="button-about">About More</button>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <img src="images/img2.png" id="education-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Popular Courses -->
+
+  <section>
+    <div class="box-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12" id="course-text">
+            <h1>Popular Courses</h1>
+            <img src="images/heading_main_border.png">
+          </div>
+            <div class="col-lg-4 col-md-4 col-sm-12" id="course-subtext">
+              <img src="images/p1.png" id="image-course">
+              <h4>Financial Accounting</h4>  
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12" id="course-subtext">
+              <img src="images/p2.png" id="image-course">
+              <h4>Managerial Accounting</h4>  
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12" id="course-subtext">
+              <img src="images/p3.png" id="image-course">
+              <h4>Intermediate Accounting</h4>  
+            </div>
+        
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+<!-- Apply for Admission -->
+
+  <section>
+    <div class="background-grey">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-6">
+            <img src="images/img6.png" id="image-admission">
+          </div>
+          <div class="col-md-6 col-lg-6" id="admission-text">
+            <h1>Apply for Admission</h1>
+            <img src="images/heading_main_border.png">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <button class="btn btn-primary btn-lg" id="button-apply">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- research -->
+
+
+  <section>
+    <div id="research-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-6" id="research">
+            <h1>Reaserch</h1>
+            <img src="images/heading_main_border.png">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <button class="btn btn-primary btn-lg" id="button-seemore">See More</button>
+          </div>
+          <div class="col-md-6 col-lg-6" id="research-text">
+            <img src="images/img7.png" id="image-admission">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- News -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12" id="news">
+            <h1>News</h1>
+            <img src="images/heading_main_border.png">
+          </div>
+
+
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <img class="" src="images/img9.png" alt="First slide">
+                    <div class="carousel-text"><h4>Technology</h4></div>
+                    <p>Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <img class="" src="images/img8.png" alt="First slide">
+                    <div class="carousel-text"><h4>Technology</h4></div>
+                    <p>Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+                </div> 
+              </div>
+
+
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <img class="" src="images/img9.png" alt="First slide">
+                      <div class="carousel-text"><h4>Technology</h4></div>
+                      <p>Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <img class="" src="images/img8.png" alt="First slide">
+                    <div class="carousel-text"><h4>Technology</h4></div>
+                    <p>Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  </div>
+                </div> 
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+<!-- Contact -->
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12" id="contactform-text">
+          <h1>Contact</h1>
+          <img src="images/heading_main_border.png">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+        <div class="contact-bluebox">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <img src="images/img10.png" style="width: 100%;">
+              </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="contact-form">
+                    <form>
+                    <div class="contact-text"><input type="text" value="Your Name"></div>
+                    <div class="contact-text"><input type="text" value="Email Address"></div>
+                    <div class="contact-text"><input type="text" value="Phone Number"></div>
+                    <div class="contact-text"><textarea>Massage</textarea>
+                    </form>
+                    <button class="btn btn-primary btn-lg" id="button-send">Send</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      
+  </section>
+
+
+<!-- Footer -->
+
+  <footer>
+    <div class="footer-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-space">
+            <div class="footer-image">
+              <h4>Logo</h4>
+            </div>
+            <div class="para-1">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-space">
+            <div class="footer-image">
+              <h4>Quick Links</h4>
+              <hr>
+              <ul>
+                <li>Join Us</li>
+                <li>Maintenance</li>
+                <li>Language Packs</li>
+                <li>LearnPress</li>
+                <li>Release Status</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-space">
+            <div class="footer-image">
+              <h4>Newsletter</h4>
+              <hr>
+            </div>
+            <div class="para-1">
+              <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p></div>
+              <div><input type="text" value="Your Email"></div>
+              <div><button class="btn btn-primary btn-lg">Submit</button></div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-space">
+            <div class="footer-image">
+              <h4>Contact us</h4>
+              <hr>
+              <div id="footer-contact">
+                <div>
+                  <img src="images/i5.png">
+                  London 145 United Kingdom
+                </div>
+                <div>
+                  <img src="images/i6.png">
+                  demo@gmail.com
+                </div>
+                <div>
+                  <img src="images/i7.png">
+                  +12586954775
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-last">
+      <div class="end-footer">
+        <p>© Copyrights 2019 design by html.design</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
